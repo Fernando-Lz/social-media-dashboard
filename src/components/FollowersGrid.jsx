@@ -1,9 +1,25 @@
-import followers from '../data/followers';
+import accounts from '../data/followers';
+import FollowerGridCard from './FollowerGridCard';
 
-const FollowersGrid = (props) => {
-  console.log(followers);
+const FollowersGrid = () => {
+  console.log(accounts);
   return (
-    <div className="container-followers" />
+    <div className="container-followers">
+      {accounts.map((account) => {
+        const {
+          accountName, followers, dailyNewFollowers, platform,
+        } = account;
+        return (
+          <FollowerGridCard
+            key={platform}
+            accountName={accountName}
+            followers={followers}
+            dailyNewFollowers={dailyNewFollowers}
+            platform={platform}
+          />
+        );
+      })}
+    </div>
   );
 };
 

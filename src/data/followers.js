@@ -1,13 +1,13 @@
 const accounts = [
   {
     accountName: '@nathanf',
-    followers: 1987,
+    followers: '1987',
     dailyNewFollowers: 12,
     platform: 'Facebook',
   },
   {
     accountName: '@nathanf',
-    followers: 1044,
+    followers: '1044',
     dailyNewFollowers: 99,
     platform: 'Twitter',
   },
@@ -19,7 +19,7 @@ const accounts = [
   },
   {
     accountName: 'Nathan F.',
-    followers: 8239,
+    followers: '8239',
     dailyNewFollowers: -144,
     platform: 'Youtube',
   },
