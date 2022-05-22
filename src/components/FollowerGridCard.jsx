@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
+import SocialMediaIcon from './SocialMediaIcon';
 
 const FollowerGridCard = ({
   accountName, followers, dailyNewFollowers, platform,
 }) => {
-  const logo = `/src/assets/icon-${platform}.svg`;
   const newFollowersIcon = (dailyNewFollowers >= 0) ? '/src/assets/icon-up.svg' : '/src/assets/icon-down.svg';
 
   return (
     <div className={`account-card ${platform}`}>
       <div className="account-name">
-        <img src={logo} alt={`${platform} logo`} />
-        <h2>{accountName}</h2>
+        <SocialMediaIcon platform={platform} />
+        <h3>{accountName}</h3>
       </div>
       <div className="account-followers">
         {followers}
@@ -20,6 +20,8 @@ const FollowerGridCard = ({
         <img src={newFollowersIcon} alt="Status logo" />
         {' '}
         {dailyNewFollowers}
+        {' '}
+        Today
       </p>
     </div>
 
