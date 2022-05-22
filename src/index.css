@@ -104,3 +104,20 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
+/* GENERAL */
+.status-up,
+.status-down {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2rem;
+}
+.status-up {
+  color: var(--status-lime-green);
+}
+
+.status-down {
+  color: var(--status-bright-red);
+}

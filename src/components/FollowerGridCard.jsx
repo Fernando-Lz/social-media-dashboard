@@ -5,7 +5,7 @@ const FollowerGridCard = ({
   accountName, followers, dailyNewFollowers, platform,
 }) => {
   const newFollowersIcon = (dailyNewFollowers >= 0) ? '/src/assets/icon-up.svg' : '/src/assets/icon-down.svg';
-
+  const statusClass = (dailyNewFollowers >= 0) ? 'status-up' : 'status-down';
   return (
     <div className={`account-card ${platform}`}>
       <div className="account-name">
@@ -16,12 +16,9 @@ const FollowerGridCard = ({
         {followers}
         <p>FOLLOWERS</p>
       </div>
-      <p className="account-followers-status">
+      <p className={`account-followers-status ${statusClass}`}>
         <img src={newFollowersIcon} alt="Status logo" />
-        {' '}
-        {dailyNewFollowers}
-        {' '}
-        Today
+        {` ${dailyNewFollowers} Today`}
       </p>
     </div>
 
