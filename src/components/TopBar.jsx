@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const TopBar = () => {
-  const [theme, setTheme] = useState('Light Mode');
+  const [theme, setTheme] = useState('Dark Mode');
 
   const handleThemeChange = () => {
     const newTheme = (theme === 'Light Mode') ? 'Dark Mode' : 'Light Mode';
@@ -10,14 +10,18 @@ const TopBar = () => {
 
   return (
     <div className="top-bar">
-      <h1>Social Media Dashboard</h1>
-      <p>Total Followers: 23,004</p>
-      <p>{theme}</p>
-      <label htmlFor="toogle-dark">
-        Dark Mode
+      <div className="top-bar-info">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
 
-        <input type="button" value="X" id="toogle-dark" onClick={handleThemeChange} />
-      </label>
+      <div className="theme-switch">
+        <p>{theme}</p>
+        <label htmlFor="toggle-dark" className="switch">
+          <input type="checkbox" id="toggle-dark" className="toggle-theme" onClick={handleThemeChange} />
+          <span className="slider" />
+        </label>
+      </div>
     </div>
   );
 };
